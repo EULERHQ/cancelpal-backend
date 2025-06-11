@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/generate": {"origins": "*"}})
 
 @app.route('/generate', methods=['POST'])
 def generate_letter():
